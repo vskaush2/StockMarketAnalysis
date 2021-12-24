@@ -18,7 +18,7 @@ This repository contains a working implementation of Cyclicity Analysis, which i
 
 
 ## Installing Project Dependencies Manually
-- Open PyCharm Settings and locate the `Project: CyclicityAnalysis` pane.
+- Open PyCharm Settings and locate the `Project: StockMarketAnalysis` pane.
 - Click on `Project Interpreter`.
 - Add a new `VirtualEnv` environment with your system Python.
 - Restart PyCharm and open its local `Terminal`, which is located on the bottom of the PyCharm window.
@@ -26,7 +26,7 @@ This repository contains a working implementation of Cyclicity Analysis, which i
 
 ## API Key
 - In order to fetch time-series data, you **need** to get your own API key from Polygon.io. 
-- Inside of the `FetchPrices.py`, replace the fake 'APIKEY' variable definition with your own. 
+- Inside of the `FetchPrices.py`, replace the string 'xxxx' with your own API key string.
 
 ## Jupyter Server Instructions
   - Open the local `Terminal` on PyCharm.
