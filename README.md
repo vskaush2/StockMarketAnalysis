@@ -1,5 +1,5 @@
 # Cyclicity Analysis of Financial Time-Series Data
-This repository contains a working implementation of Cyclicity Analysis, which is a pattern recognition technique for analyzing leader follower relationships amongst multiple time-series.
+This repository contains a working implementation of Cyclicity Analysis, which is a pattern recognition technique for analyzing leader follower relationships amongst multiple time-series. We run Cyclicity Analysis on financial time-series pertaining to the stock and cryptocurrency markets. 
 
 ## Downloading Requirements
 - Download PyCharm (free edition) from https://www.jetbrains.com/pycharm/.
