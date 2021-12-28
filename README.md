@@ -26,6 +26,7 @@ This repository contains a working implementation of Cyclicity Analysis, which i
 
 ## API Key
 - In order to fetch time-series data, you **need** to get your own API key from https://polygon.io/. 
+- For easy data fetching, it is strongly recommended you purchase the Starter plans in https://polygon.io/stocks#stocks-product-cards and https://polygon.io/crypto.
 - Inside of the `FetchPrices.py`, replace the string 'xxxx' with your own API key string.
 
 ## Jupyter Server Instructions
