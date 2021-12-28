@@ -25,7 +25,7 @@ This repository contains a working implementation of Cyclicity Analysis, which i
 - Type the command `pip3 install -r requirements.txt` in Terminal to install project dependencies.
 
 ## API Key
-- In order to fetch time-series data, you **need** to get your own API key from Polygon.io. 
+- In order to fetch time-series data, you **need** to get your own API key from https://polygon.io/. 
 - Inside of the `FetchPrices.py`, replace the string 'xxxx' with your own API key string.
 
 ## Jupyter Server Instructions
