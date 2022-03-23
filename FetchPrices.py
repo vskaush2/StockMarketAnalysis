@@ -5,8 +5,10 @@ import numpy as np
 from joblib import Parallel, delayed
 import scipy as sc
 from scipy import signal
+import warnings
+warnings.filterwarnings('ignore')
 
-APIKEY='' # You need to obtain your own API key from Polygon.io ! DO NOT SHARE PUBLICLY !
+APIKEY='xxxx' # You need to obtain your own API key from Polygon.io ! AND DO NOT SHARE YOUR KEY PUBLICLY !
 today=pd.Timestamp('today').strftime("%Y-%m-%d") # Extracting today's date
 
 
@@ -73,17 +75,17 @@ class FetchPrices:
         for abbrev in self.abbrevs:
           try:
             available_data=daily_prices_df[abbrev].dropna()
-            logged_data=np.log(available_data)
-            detrended_data=np.log(logged_data)
+            logged_data=np.log(available_data) #Log
+            detrended_data=sc.signal.detrend(logged_data) #Detrend
             norm=np.linalg.norm(detrended_data,2)
-            normalized_data=detrended_data/norm
+            normalized_data=detrended_data/norm #normalize
             daily_prices_df[abbrev].loc[available_data.index]=normalized_data
           except:
             daily_prices_df.drop(columns=[abbrev],inplace=True)
 
-        daily_prices_df.fillna(method='ffill',inplace=True)
-        daily_prices_df.fillna(method='bfill',inplace=True)
-        daily_prices_df=daily_prices_df-daily_prices_df.iloc[0]
+        daily_prices_df.fillna(method='ffill',inplace=True) # Forward-fill
+        daily_prices_df.fillna(method='bfill',inplace=True) # Back-fill
+        daily_prices_df=daily_prices_df-daily_prices_df.iloc[0] #Translation by first Value
 
       return daily_prices_df
 
